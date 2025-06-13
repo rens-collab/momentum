@@ -57,7 +57,7 @@
 #header_home {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
