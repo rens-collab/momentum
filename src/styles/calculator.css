@@ -251,6 +251,10 @@ input:focus, select:hover {
   background: #c0392b;
 }
 
+.reset {
+  background-color: red;
+  columns: white;
+}
 @media (max-width: 600px) {
   .results-container, .form-container, .calorie-tracker {
     max-width: 90vw;
