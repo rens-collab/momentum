@@ -116,9 +116,11 @@ input:focus, select:hover {
   box-shadow: 0 0 10px rgba(229, 57, 53, 0.6);
   outline: none;
 }
-
+.reset{
+  background-color: red !important;
+  color: white !important;
+}
 .submit {
-  background: linear-gradient(45deg, #fff, #ddd);
   color: #111;
   margin: 0 30px;
   padding: 15px;
@@ -131,7 +133,7 @@ input:focus, select:hover {
 }
 
 .submit:hover {
-  background-color: var(--btn-primary);
+  background-color: whitesmoke;
   color: black;
   transform: scale(1.08);
   box-shadow: var(--shadow-primary);
@@ -251,10 +253,7 @@ input:focus, select:hover {
   background: #c0392b;
 }
 
-.reset button{
-  background-color: red !important;
-  color: white !important;
-}
+
 @media (max-width: 600px) {
   .results-container, .form-container, .calorie-tracker {
     max-width: 90vw;
