@@ -3,18 +3,18 @@ import { Link } from "react-router-dom";
 import headerVideo from "../assets/header_video.mp4";
 import logo from "../assets/favicon.jpg"
 import { useEffect, useState } from "react";
-// import axios from "axios";
+import axios from "axios";
 
 function Home() {
 
   const [quote, setQuote] = useState("");
 
-// useEffect(() => {
-//   axios
-//     .get("http://localhost:5001/api/quotes")
-//     .then((res) => setQuote(res.data.quote))
-//     .catch((err) => console.error("Failed to fetch quote", err));
-// }, []);
+useEffect(() => {
+  axios
+    .get("http://localhost:5001/api/quotes")
+    .then((res) => setQuote(res.data.quote))
+    .catch((err) => console.error("Failed to fetch quote", err));
+}, []);
 
   return (
     <>
@@ -69,7 +69,7 @@ function Home() {
         </p>
 
         <section id="quote_section">
-          <blockquote>Lekker dansje doen</blockquote>
+          <blockquote>{quote}</blockquote>
         </section>
       </section>
     </>
