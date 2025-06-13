@@ -24,6 +24,7 @@ body {
   background: var(--bg-color);
   color: var(--text-color);
   text-align: center;
+  overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -73,8 +74,9 @@ header::after {
   padding: 3rem 2rem;
   background: url("../images/GYM.jpg") center/cover no-repeat;
   backdrop-filter: blur(6px);
-  width: 50vw;
+  width: 90vw;
   margin: auto;
+  max-width: 800px;
   animation: bgShift 30s linear infinite;
 }
 
