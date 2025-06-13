@@ -251,7 +251,7 @@ input:focus, select:hover {
   background: #c0392b;
 }
 
-.reset {
+.reset button{
   background-color: red !important;
   color: white !important;
 }
