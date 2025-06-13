@@ -1,0 +1,216 @@
+:root {
+  --bg-color: white;
+  --text-color: black;
+  --link-color: red;
+  --nav-bg: black;
+  --footer-bg: #222;
+  --button-primary: #e53935;
+  --button-primary-hover: #c62828;
+  --button-secondary-bg: #000;
+  --button-secondary-hover: #1a1a1a;
+  --shadow-primary: 0 4px 12px #e53935;
+  --shadow-secondary: 0 4px 12px black;
+}
+
+.darkmode {
+  --bg-color: #111;
+  --text-color: white;
+  --link-color: #ff4747;
+  --nav-bg: #000;
+  --footer-bg: #222;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+h1 { font-size: 48px; }
+h2 { font-size: 34px; }
+h3 { font-size: 26px; }
+
+p {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: var(--text-color);
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(135deg, #d30000, #c91313);
+  padding: 3rem 1rem;
+  text-align: center;
+  color: white;
+  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.3);
+  position: relative;
+  animation: pulseGlow 3s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.4), 0 0 40px rgba(255, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(255, 255, 255, 0.4), 0 0 60px rgba(255, 0, 0, 0.4);
+  }
+}
+
+header h1 {
+  margin: 0;
+  letter-spacing: 1.5px;
+  font-size: 2.5rem;
+  animation: slideInDown 1s ease-out forwards;
+  opacity: 0;
+}
+
+header p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  opacity: 0;
+  animation: fadeIn 2s 0.5s ease-in forwards;
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* GRID LAYOUT */
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 3rem 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* ICON BLOCKS */
+.icon-block {
+  border-radius: 16px;
+  padding: 2.5rem;
+  text-align: center;
+  border: 2px solid gray;
+  background: var(--bg-color);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  backdrop-filter: blur(6px);
+  position: relative;
+  overflow: hidden;
+}
+
+.icon-block:hover img {
+  transform: scale(1.12) rotate(-6deg);
+  box-shadow: 0 12px 30px rgba(200, 0, 0, 0.55);
+  border-color: #8b0000;
+}
+
+.icon-block img {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 1rem;
+  object-fit: scale-down;
+  filter: drop-shadow(0 0 5px white);
+  border-radius: 50%;
+  border: 3px solid #d30000;
+  transition: transform 0.5s ease;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.icon-block span {
+  display: block;
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.icon-block ul {
+  list-style-type: disc;
+  text-align: left;
+  padding-left: 20px;
+  line-height: 1.6em;
+}
+
+.icon-block li {
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.icon-block li:hover {
+  transform: translateX(10px);
+  color: #ff4e4e;
+}
+
+/* THEME SWITCH BUTTON */
+#theme-switch {
+  height: 45px;
+  width: 45px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--button-secondary-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 3px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 2000;
+}
+
+#theme-switch svg {
+  fill: var(--button-primary);
+}
+
+#theme-switch svg:last-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+  display: block;
+}
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .grid-layout {
+    padding: 2rem 1rem;
+  }
+
+  .icon-block {
+    padding: 1.5rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+}
